@@ -1,7 +1,7 @@
 'use strict'
 
 import Vue from 'vue'
-import Input from '../../components/select.vue'
+import Input from '../../vx.vue'
 
 const DEFAULT_DISABLED = false
 const DEFAULT_REQUIRED = false
