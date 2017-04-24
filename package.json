@@ -52,7 +52,7 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-spec-reporter": "0.0.31",
     "karma-webpack": "^2.0.3",
-    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.14",
     "vue": "^2.2.6",
     "vue-loader": "^11.3.4",
     "vue-style-loader": "^3.0.0",
