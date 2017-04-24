@@ -3,7 +3,7 @@ node_js:
   - '4'
 script:
   - npm install
-  - npm test
+  #- npm test
   - npm config set scope vx-components --global
   - npm config set access public
 deploy:
