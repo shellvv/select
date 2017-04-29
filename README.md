@@ -11,7 +11,6 @@ npm install --save @vx-components/select
 ```
 
 ## VxSelect API
-
 ### props 
 - `v-model` ***String*** (*optional*) 
 Use this directive to create two-way data bindings with the component. It automatically picks the correct way to update the element based on the input type. 
@@ -49,11 +48,13 @@ If the control is presented as a scrolled list box, this property represents the
 - `options` ***Array*** (*optional*) 
 The list of items of the control 
 
-- `dataClassError` ***String*** (*optional*) `default: 'uk-form-danger'` 
+- `data-class-error` ***String*** (*optional*) `default: 'uk-form-danger'` 
 
 ### events 
 - `invalid` Fired when a submittable element has been checked and doesn't satisfy its constraints. The validity of submittable elements is checked before submitting their owner form. 
+
 - `input` Fired when the value is changed. 
+
 - `change` Fired when a change to the initial element's value is committed by the user. Unlike the `input` event, the change event is not necessarily fired for each change to an element's value. 
 
 ### methods 
@@ -79,7 +80,7 @@ clear the message error
 </template>
 
 <script>
-  import VxSelect from '@vx-components/select/vx.vue'
+  import VxSelect from '@vx-components/select'
   
   export default {
     data: () => ({
