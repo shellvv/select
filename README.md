@@ -15,6 +15,9 @@ npm install --save @vx-components/select
 - `v-model` ***String*** (*optional*) 
 Use this directive to create two-way data bindings with the component. It automatically picks the correct way to update the element based on the input type. 
 
+- `options` ***Array*** (*optional*) 
+The set of object `{ value, label }`. Example: `[{ value: 1, label: 'One' }]` 
+
 - `id` ***String*** (*optional*) 
 Defines a unique identifier (ID) which must be unique in the whole document. 
 
@@ -44,9 +47,6 @@ A Boolean property indicating that an option with a non-empty string value must 
 
 - `size` ***Number*** (*optional*) 
 If the control is presented as a scrolled list box, this property represents the number of rows in the list that should be visible at one time. Browsers are not required to present a select element as a scrolled list box. The default value is 0. 
-
-- `options` ***Array*** (*optional*) 
-The list of items of the control 
 
 - `data-class-error` ***String*** (*optional*) `default: 'uk-form-danger'` 
 

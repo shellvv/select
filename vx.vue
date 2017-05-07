@@ -15,8 +15,7 @@
       <option value="" class="placeholder">
         {{ placeholder }}</option>
       <option v-for="item of options"
-        :value="item.value || item.label">
-          {{ item.label }}</option>
+        :value="item.value">{{ item.label }}</option>
     </select>
     <div v-if="errorMessage" class="uk-alert-danger" uk-alert>
       {{ errorMessage }}</div>
@@ -35,6 +34,21 @@
        * @model
        */
       value: { type: String },
+
+      /**
+       * The set of object `{ value, label }`. Example: `[{ value: 1, label: 'One' }]`
+       */
+      options: {
+        type: Array,
+        validator (items) {
+          return !items.find((item) => {
+            if (typeof item !== 'object' && item !== null) {
+              return true
+            }
+            return false
+          })
+        }
+      },
 
       /**
        * Defines a unique identifier (ID) which must be unique in the whole document.
@@ -66,14 +80,14 @@
        * TODO Need to be implemented
        * @private
        */
-      maxlength: { type: Number, validation: (value) => value > 0 },
+      maxlength: { type: Number, validator: (value) => value > 0 },
 
       /**
        * The minimum number of characters (Unicode code points) required that the user should enter.
        * TODO Need to be implemented
        * @private
        */
-      minlength: { type: Number, validation: (value) => value >= 0 },
+      minlength: { type: Number, validator: (value) => value >= 0 },
 
       /**
        * This Boolean property indicates that multiple options can be selected in the list. If it is not specified, then only one option can be selected at a time.
@@ -105,12 +119,7 @@
       /**
        * If the control is presented as a scrolled list box, this property represents the number of rows in the list that should be visible at one time. Browsers are not required to present a select element as a scrolled list box. The default value is 0.
        */
-      size: { type: Number, default: 0, validation: (value) => value >= 0 },
-
-      /**
-       * The list of items of the control
-       */
-      options: { type: Array },
+      size: { type: Number, default: 0, validator: (value) => value >= 0 },
 
       dataClassError: { type: String, default: 'uk-form-danger' }
     },
